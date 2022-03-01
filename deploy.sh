@@ -4,10 +4,10 @@
 set -e
 
 # 문서(md)를 build하여 html로 만든다. 
-yarn docs:build
+npm run build
 
 # build가 output된 폴더로 이동한다. 
-cd .vuepress/dist
+cd ./dist
 
 # init + add + commit을 해준 다음
 git init

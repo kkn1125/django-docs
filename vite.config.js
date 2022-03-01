@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [vue()],
   publicPath:
     process.env.NODE_ENV === "production"
-      ? "/python-docs/" // note the trailing slash
+      ? "/django-docs/" // note the trailing slash
       : "/",
   resolve: {
     alias: {
@@ -23,7 +23,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        nested: resolve(__dirname, "nested/index.html"),
+        about: resolve(__dirname, "about/index.html"),
+        "404": resolve(__dirname, "404/index.html"),
       },
     },
   },
