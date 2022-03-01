@@ -24,8 +24,8 @@ const routes = [
     component: NotFound,
   },
   {
-    path: root+":pathMatch(.*)*",
-    redirect: "/404",
+    path: ":pathMatch(.*)*",
+    redirect: root+"/404",
   },
 ];
 
