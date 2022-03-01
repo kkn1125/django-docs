@@ -3,25 +3,29 @@ import Home from "@/components/Home.vue";
 import About from "@/components/About.vue";
 import NotFound from "@/components/NotFounds.vue";
 
+const root = process.env.NODE_ENV === "production"
+? "/django-docs/" // note the trailing slash
+: "/";
+
 const routes = [
   {
-    path: "/",
+    path: root+"",
     name: "home",
     component: Home,
   },
   {
-    path: "/about",
+    path: root+"about",
     name: "about",
     component: About,
   },
   {
-    path: "/404",
+    path: root+"404",
     name: "notFound",
     component: NotFound,
   },
   {
-    path: '/:pathMatch(.*)*',
-    redirect: "/404"
+    path: root+":pathMatch(.*)*",
+    redirect: "/404",
   },
 ];
 
